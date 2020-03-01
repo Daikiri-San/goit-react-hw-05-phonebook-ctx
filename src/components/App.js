@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import uuid from 'uuid/v4';
 import ThemeContext from '../contexts/ThemeContext';
 import Filter from './Filter';
@@ -8,11 +7,8 @@ import ContactForm from './ContactForm';
 import ContactList from './ContactList';
 import Notification from './Notification';
 import Header from './Header';
+import TextNotification from './TextNotification';
 import '../base.css';
-
-const Text = styled.p`
-  font-size: 3rem;
-`;
 
 class App extends Component {
   state = {
@@ -121,10 +117,10 @@ class App extends Component {
             onRemoveContact={this.removeContact}
           />
           {contacts.length === 0 && (
-            <Text>There are no contacts. Add some :)</Text>
+            <TextNotification message={'There are no contacts. Add some :)'} />
           )}
           {contacts.length > 1 && visibleContacts.length === 0 && (
-            <Text>No contacts found :(</Text>
+            <TextNotification message={'No contacts found :('} />
           )}
         </Layout>
       </ThemeContext>

@@ -6,6 +6,7 @@ const themeConfig = {
     contentColor: '#1d2bcc',
     mainShadowBox: '0px 2px 8px -3px rgba(0, 0, 0, 0.75)',
     inputColor: 'snow',
+    messageColor: 'black',
   },
 
   dark: {
@@ -13,6 +14,7 @@ const themeConfig = {
     contentColor: '#ccc',
     mainShadowBox: '0px 0px 8px 1px rgba(255, 255, 255, 0.75)',
     inputColor: '#e0e0e0',
+    messageColor: '#ccc',
   },
 };
 
