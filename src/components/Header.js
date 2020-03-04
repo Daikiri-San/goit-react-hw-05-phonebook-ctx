@@ -86,12 +86,12 @@ function Header({ text, apearPage, theme }) {
       </CSSTransition>
       <div>
         <LabelOfSwitch color={theme.config.contentColor}>
-          Theme: {theme.type === 'light' ? 'Light' : 'Dark'}
+          Theme: {theme.theme === 'light' ? 'Light' : 'Dark'}
         </LabelOfSwitch>
         <Label>
           <Input
             type="checkbox"
-            checked={theme.type === 'light'}
+            checked={theme.theme === 'light'}
             onChange={theme.toggleTheme}
           />
           <Slider></Slider>

@@ -24,26 +24,26 @@ class ThemeContext extends Component {
   static Consumer = Context.Consumer;
 
   toggleTheme = () => {
-    const { theme } = this.state;
+    const { theme, config } = this.state;
     this.setState({
-      theme: theme === 'dark' ? 'light' : 'dark',
+      theme: theme === 'light' ? 'dark' : 'light',
+      config:
+        config === themeConfig.light ? themeConfig.dark : themeConfig.light,
     });
   };
 
   state = {
     theme: 'light',
     toggleTheme: this.toggleTheme,
+    config: themeConfig.light,
   };
 
   render() {
-    const { theme } = this.state;
     const { children } = this.props;
     return (
       <Context.Provider
         value={{
           ...this.state,
-          type: theme,
-          config: themeConfig[theme],
         }}
       >
         {children}
